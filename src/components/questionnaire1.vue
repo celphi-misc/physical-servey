@@ -149,7 +149,7 @@ export default {
         }
       }
       this.data.timestamp = new Date().toTimeString();
-      Axios.post('http://localhost:9996/questionnaire/1', this.data);
+      Axios.post('http://39.108.226.122:9996/questionnaire/1', this.data);
       
       var count = 0;
       var total = this.data.sex === 'M' ? 14 : 20;
