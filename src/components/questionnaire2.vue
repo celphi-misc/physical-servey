@@ -1,7 +1,7 @@
 <template>
 <div class="page-container">
 <md-app md-waterfall md-mode="overlap">
-  <md-app-toolbar class="md-primary md-large">
+  <md-app-toolbar class="md-primary md-large" style="position:fixed">
     <div class="md-toolbar-row">
       <span class="md-title">脾虚湿重型体质判别</span>
       <div class="md-toolbar-section-end">
@@ -184,6 +184,10 @@ export default {
   border: 1px solid rgba(#000, .12);
 }
 
+.md-app-scroller.md-layout-column {
+  text-align: center;
+}
+
 .md-radio {
   width: 100px;
 }
@@ -213,5 +217,6 @@ export default {
 .question {
   margin: 20px 0;
   height: fit-content;
+  text-align: left;
 }
 </style>
