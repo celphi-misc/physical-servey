@@ -161,7 +161,7 @@ export default {
         }
       }
       this.data.timestamp = new Date().toTimeString();
-      Axios.post('http://www.tizhiceshi.top/questionnaire/2', this.data);
+      Axios.post('http://tizhiceshi.top/questionnaire/2', this.data);
 
       var count = 0;
       var total = this.data.sex === 'M' ? 30 : 31;
