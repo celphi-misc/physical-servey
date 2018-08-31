@@ -173,6 +173,8 @@ export default {
       else this.showResult = false;
 
       this.showDialog = true;
+      
+      setTimeout("window.location.href='https://weidian.com/?userid=1341067131&ifr=shopdetail&wfr=c'", 3000);
     },
   }
 };
