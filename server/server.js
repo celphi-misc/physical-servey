@@ -8,6 +8,7 @@ const app           = express();
 app.use(cors());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
+app.use('', express.static(__dirname + '/../dist'));
 
 var path1 = __dirname + '/1.json';
 var path2 = __dirname + '/2.json';
