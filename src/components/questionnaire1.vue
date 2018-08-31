@@ -131,6 +131,7 @@ export default {
     }
   },
   created() {
+    document.title = '气滞（血瘀）型体质判别';
     this.$material.locale = this.locale;
   },
   methods: {

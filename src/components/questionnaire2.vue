@@ -142,6 +142,7 @@ export default {
     }
   },
   created() {
+    document.title = '脾虚湿重型体质判别';
     this.$material.locale = this.locale;
   },
   methods: {
@@ -173,7 +174,7 @@ export default {
       else this.showResult = false;
 
       this.showDialog = true;
-      
+
       setTimeout("window.location.href='https://weidian.com/?userid=1341067131&ifr=shopdetail&wfr=c'", 3000);
     },
   }
