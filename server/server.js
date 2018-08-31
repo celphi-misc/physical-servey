@@ -103,5 +103,5 @@ app.get('/result/2', (req, res) => {
     res.json(JSON.parse(fs.readFileSync(path2)));
 });
 
-var port = 9996;
+var port = 80;
 app.listen(port, () => console.log('Server running at localhost:' + port));
