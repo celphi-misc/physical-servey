@@ -156,7 +156,6 @@ export default {
       for(let i = 0; i < (this.data.sex === 'M' ? 14 : 20); i++) {
         if(this.data.result[i] === this.questions[i].default) count++;
       }
-      console.log([count, total]);
       if(count > total * 2/3) this.showResult = true;
       else this.showResult = false;
 
