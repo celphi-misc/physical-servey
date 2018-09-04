@@ -1,6 +1,6 @@
 <template>
 <div class="page-container">
-<md-app md-waterfall md-mode="overlap">
+<md-app md-waterfall md-mode="overlap" :md-scrollbar="false">
   <md-app-toolbar class="md-primary md-large" style="position:fixed">
     <div class="md-toolbar-row">
       <span class="md-title">脾虚湿重型体质判别</span>
@@ -66,9 +66,13 @@
     </md-snackbar>
     <md-dialog :md-active.sync="showDialog">
       <md-dialog-title>感谢您的测试</md-dialog-title>
-      <md-dialog-content v-if="showResult">您有80%的机率是脾虚湿重型体质</md-dialog-content>
-      <md-dialog-content v-else>有80%的可能性您不是脾虚湿重型体质</md-dialog-content>
+      <img :src="plantsSVG" style="width:80%;margin:auto"/>
+      <div class="number">80%</div>
+      <div class="remark">
+        的可能性<span v-if="showResult">您是脾虚湿重型体质</span><span v-else>您不是脾虚湿重型体质</span>
+      </div>
     </md-dialog>
+  <footer>浙ICP备18031253号-1</footer>
   </md-app-content>
 </md-app>
 </div>
@@ -76,6 +80,7 @@
 
 <script>
 import Axios from 'axios';
+import plantsSVG from '../assets/plants.svg';
 
 export default {
   name: 'Questionnaire2',
@@ -87,7 +92,7 @@ export default {
         name: '',
         phone: '',
         email: '',
-        result: new Array(31).fill(null),
+        result: new Array(31).fill(null)
       },
       questions: [
         {"index": "1", "ask": "胃口好不好？", "trueStr": "好", "falseStr": "不好", "default": false},
@@ -138,7 +143,8 @@ export default {
       showSnackbar: false,
       snackbarContent: 'hello',
       showDialog: false,
-      showResult: false
+      showResult: false,
+      plantsSVG
     }
   },
   created() {
@@ -221,5 +227,34 @@ export default {
   margin: 20px 0;
   height: fit-content;
   text-align: left;
+}
+
+.md-dialog-title {
+  font-size: 24px;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+footer {
+  color: #BBB;
+}
+
+.number {
+  font-size: 42pt;
+  line-height: 50pt;
+}
+
+.remark {
+  margin-bottom: 10%;
+}
+
+.md-dialog-container {
+  text-align: center;
+  line-height: 120%;
+}
+
+.md-dialog-content {
+  padding-top: 25px;
+  padding-bottom: 20%;
 }
 </style>
